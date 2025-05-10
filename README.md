@@ -190,3 +190,72 @@ Answer with `n`
 ### 15. Verbose.
 Answer with `1`
 ## 4. Tmux Config
+We have to customise Tmux to improve our tmux experience, while also looking sleek and clean, by editing the `.tmux.conf` file.</br>
+It's usually located in `~/` or *Home* directory. It won't exits by default, so proceed to create one.</br>
+Follow these steps below.
+### A. Create .tmux.conf file
+To go back into Home directory (if you haven't), run:
+```
+cd
+```
+Then create the .tmux.conf by running:
+```
+touch .tmux.conf
+```
+### B. Paste this Tmux configuration
+This will make Tmux a whole lot better!
+```
+# --- GENERAL SETTINGS ---
+set -g mouse on                                         # Enable mouse support
+set -g history-limit 10000                              # Scrollback history
+set -g base-index 1                                     # Start windows at 1
+setw -g pane-base-index 1                               # Start panes at 1
+set-option -g detach-on-destroy off                     # Don't exit if a session is destroyed
+set-option -g renumber-windows on                       # Auto-renumber windows
+set-option -ga terminal-overrides ",xterm-256color:Tc"  # Enable 24-bit colors
+
+# --- KEY BINDINGS ---
+unbind C-b                               # Unbind default prefix
+set -g prefix C-a                        # Use Ctrl-a as the new prefix
+bind C-a send-prefix                     # Allow sending Ctrl-a to programs
+
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"  # Reload config
+
+# --- PANE NAVIGATION ---
+# Use Ctrl+a and Vim-like keys for pane navigation
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+
+# Resize panes
+# Use Ctrl+a and < or > or + or - 
+bind -r < resize-pane -L 5
+bind -r > resize-pane -R 5
+bind -r + resize-pane -U 5
+bind -r - resize-pane -D 5
+
+# --- CLIPBOARD (macOS) ---
+# Requires 'reattach-to-user-namespace' for tmux < 3.2
+# If using tmux ≥ 3.2 on macOS, built-in pbcopy support is available:
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "pbcopy"
+
+# --- STATUS BAR ---
+set -g status-interval 5
+set -g status-justify centre
+set -g status-left-length 60
+set -g status-right-length 120
+set -g status-left '#[fg=white]#S #[default]'
+set -g status-right '#[fg=white]%Y-%m-%d #[fg=cyan]%H:%M #[default]'
+set -g status-bg colour235
+set -g status-fg white
+
+# --- COLORS & THEME ---
+set -g default-terminal "screen-256color"
+set -ga terminal-overrides ",xterm-256color:Tc"
+
+# Use Vim keys in copy mode
+setw -g mode-keys vi
+```
+# Done!
+Please contact me, or post issues if you have any problems or inquries regarding this setup.
