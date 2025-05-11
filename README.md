@@ -65,7 +65,7 @@ ___
    Install by running by following the steps [here](https://github.com/tmux/tmux/wiki/Installing)</br>
 # Configuring Custom Config
 Here below are the custom configs for *Alacritty*, *zsh*, *Oh My zsh*, *Powerlevel10k* and *Tmux*.
-## 1. Prere quisite
+## 1. Prerequisites
 Now that we have zsh. We need to set it as our default *shell*.</br>
 Because most OS tend to use *bash* as the default shell.
 ### A. Check zhs's path 
@@ -147,7 +147,7 @@ cursor = "#cdd6f4"
 text = "#1e1e2e"
 background = "#cdd6f4"
 ```
-This alacritty.toml config will make Alacritty:
+This `alacritty.toml` config will make Alacritty:
 - Borderless
 - Remove titlebar
 - Black background
