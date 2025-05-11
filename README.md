@@ -22,36 +22,36 @@ ___
    Alacritty is a robust Terminal Emulator, powerful and fast!
    > You can download it from the official [Alacritty Website](https://alacritty.org/), make sure to get the latest version. Or you can also install it using your system's package manager.
 ## 2. **Install zsh (*if not installed*)**:
-   Zsh is a Unix shell. Just like Bourne shell but with more improvement.</br>
-   We need Zsh shell to use *Oh My Zsh*.</br>
+   Zsh is a *Unix shell*. Just like *Bourne shell* but with more improvement. For more information [Bash vs Zsh](https://codeparrot.ai/blogs/zsh-vs-bash-key-differences-features-and-which-one-to-choose)</br>
+   We need *zsh shell* to use *Oh My Zsh*.</br>
    Follow instruction below based on your operating system.</br>
-  - On macOS:</br>
+  - On **macOS**:</br>
   Zsh is pre-installed.
   You can check by running:
   ```bash
   zsh --version
   ```
-  - On Debian/Ubuntu:</br>
+  - On **Debian/Ubuntu**:</br>
   You can install it by running:
   ```bash
   sudo apt update
   sudo apt install zsh
   ```
-  - On Arch Linux:</br>
+  - On **Arch Linux**:</br>
   You can install it by running:
   ```bash
   sudo apt update
   sudo apt install zsh
   ```
 ## 3. Install **Oh My zsh**:
-   This setup uses [Oh My Zsh](https://ohmyz.sh/) as the Zsh framework.</br>
+   This setup uses [Oh My Zsh](https://ohmyz.sh/) as the zsh framework.</br>
    Oh My Zsh is a delightful, filled with helpful functions, helpers, plugins, themes.
-   Install Oh My Zsh by running this command:
+   Install `Oh My Zsh` by running this command:
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 ## 4. **Optional but Recommended** Install **Powerlevel10k** (Zsh Theme):
-   [Powerlevel10k](https://github.com/romkatv/powerlevel10k) is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.</br>
+   [Powerlevel10k](https://github.com/romkatv/powerlevel10k) is a theme for zsh. It emphasizes speed, flexibility and out-of-the-box experience.</br>
    This is optional to improve UI and UX to get the best Terminal experience.</br>
    Install by running by following these steps:</br>
     - Install the [recommended font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k). Optional but highly recommended.</br>
@@ -64,8 +64,8 @@ ___
    Tmux needed for splitting Terminal window as Alacritty don't support splliting window or tab-like by default.</br>
    Install by running by following the steps [here](https://github.com/tmux/tmux/wiki/Installing)</br>
 # Configuring Custom Config
-Here below are the custom configs for Alacritty, zsh, Oh My zsh, Powerlevel10k and Tmux.
-## 1. Prequisite
+Here below are the custom configs for *Alacritty*, *zsh*, *Oh My zsh*, *Powerlevel10k* and *Tmux*.
+## 1. Prere quisite
 Now that we have zsh. We need to set it as our default *shell*.</br>
 Because most OS tend to use *bash* as the default shell.
 ### A. Check zhs's path 
@@ -110,13 +110,13 @@ Run:
 ```
 mkdir -p ~/.config/alacritty
 ```
-Then create the alacritty.toml file, by running this command:
+Then create the `alacritty.toml` file, by running this command:
 ```
 touch ~/.config/alacritty/alacritty.toml
 ```
 ### C. Adding Custom Config to alacritty.toml
-Use *vim* or *nano*, or any text editor (if you prefer), to edit the alacritty.toml file</br>
-With Vim:
+Use *vim* or *nano*, or any text editor (if you prefer). To edit the `alacritty.toml` file</br>
+with Vim run:
 ```
 vim ~/.config/alacritty/alacritty.toml
 ```
@@ -188,17 +188,18 @@ Answer with `2
 ### 14. No.
 Answer with `n`
 ### 15. Verbose.
-Answer with `1`
+Answer with `1`</br>
+Now **Powerlevel10k** is configured!.
 ## 4. Tmux Config
-We have to customise Tmux to improve our tmux experience, while also looking sleek and clean, by editing the `.tmux.conf` file.</br>
-It's usually located in `~/` or *Home* directory. It won't exits by default, so proceed to create one.</br>
+We have to customise Tmux to improve our terminal experience, while also looking sleek and clean, by editing the `.tmux.conf` file.</br>
+It's usually located in `~/` or `*Home*` directory. It won't exits by default, so proceed to create one.</br>
 Follow these steps below.
 ### A. Create .tmux.conf file
-To go back into Home directory (if you haven't), run:
+To go back into `home` directory (if you haven't), run:
 ```
 cd
 ```
-Then create the .tmux.conf by running:
+Then create the `.tmux.conf` by running:
 ```
 touch .tmux.conf
 ```
