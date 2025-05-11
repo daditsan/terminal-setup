@@ -1,4 +1,4 @@
-*My personal terminal setup. This is the most minimalist (less distraction, more focused) and sleek looking yet still fast!</br></br>
+*This is the most minimalist (less distraction, more focused) and sleek looking yet still fast!</br></br>
 and it also beginner friendly!* </br></br>
 Tested in: 
 - MacOS Sequoia
