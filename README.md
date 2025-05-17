@@ -203,6 +203,12 @@ Then create the `.tmux.conf` by running:
 ```
 touch .tmux.conf
 ```
+> **NOTE**: If you're using Linux, you might need to install extra package based on your Linux _Display Servers_ to improve Tmux experience.
+> First, check your display servers by running this command in terminal `echo $XDG_SESSION_TYPE`.
+>> If it prints **x11**,
+>> Install: `xsel` with your package manager.
+>>> If it prints **Wayland**,
+>>> Install: `wl-clipboard` with your package manager.
 ### B. Paste this Tmux configuration
 This will make Tmux a whole lot better!
 ```
@@ -236,10 +242,25 @@ bind -r > resize-pane -R 5
 bind -r + resize-pane -U 5
 bind -r - resize-pane -D 5
 
+# --- TMUX CLIPBOARD COPY MODE ---
+# Only use one based on your OS.
+# Uncomment to use. (Remove the #)
+
+# --- CLIPBOARD (Linux x11) ---
+# Requires 'xsel'
+# Uncomment below if you're using Linux and x11 display servers.
+# bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "xsel -ib"
+
+# --- CLIPBOARD (Linux Wayland) ---
+# Requires 'xsel'
+# Uncomment below if you're using Linux and Wayland display servers.
+# bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"
+
 # --- CLIPBOARD (macOS) ---
 # Requires 'reattach-to-user-namespace' for tmux < 3.2
-# If using tmux ≥ 3.2 on macOS, built-in pbcopy support is available:
-bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "pbcopy"
+# If using tmux ≥ 3.2 on macOS, built-in pbcopy support is available.
+# Uncomment below if you're using macOS.
+# bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "pbcopy"
 
 # --- STATUS BAR ---
 set -g status-interval 5
@@ -256,6 +277,10 @@ set -g default-terminal "screen-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
 # Use Vim keys in copy mode
+# Press Ctrl+a+[ to enter Tmux copy mode, which also work as navigation inside the terminal tmux session.
+# Use vim-like keys for navigation (h,j,k,l and etc), and (V) to enter Vi visual mode, and (y) to copy marked text.
+# Copied text will be saved in system clipboard.
+# Press q to exit Tmux copy mode.
 setw -g mode-keys vi
 ```
 # Done!
