@@ -11,7 +11,7 @@ ___
   <img width=150 height=150 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Z_Shell_Logo_Color_Vertical.svg/330px-Z_Shell_Logo_Color_Vertical.svg.png"
   <img width=150 height=150 src="https://ohmyz.sh/img/ohmyzsh-logo-ansi.png">
   <img width=150 heigth=150 src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png">
-  <img width=500 height=150 src="https://raw.githubusercontent.com/tmux/tmux/master/logo/tmux-logo-medium.png">
+  <img width=490 height=150 src="https://raw.githubusercontent.com/tmux/tmux/master/logo/tmux-logo-medium.png">
 </div>
 
 ___
